@@ -3,10 +3,23 @@ import './App.css'
 import Gallery from './challenges/Gallery/Gallery'
 import Form from './challenges/Form/Form'
 import FeedbackForm from './challenges/FeedbackForm/FeedbackForm'
+import FeedbackFormV2 from './challenges/FeedbackFormV2/FeedbackFormV2'
+
 function App() {
 
   return (
     <>
+
+      <h2>FeedbackFormV2 移除不必要的 state </h2>
+      <div>
+          当按钮被点击时，这个例子应该询问用户的名字，然后显示一个 alert 欢迎他们。你尝试使用 state 来保存名字，但由于某种原因，它始终显示“Hello, ！”。
+
+          要修复此代码，请删除不必要的 state 变量。（我们将在稍后讨论为什么上述代码不起作用。）
+
+          你能解释为什么这个 state 变量是不必要的吗？
+      </div>
+      <br />
+      <FeedbackFormV2></FeedbackFormV2>
       
       <h2>FeedbackForm 修复一个错误</h2>
       <div>这是一个收集用户反馈的小表单。当反馈被提交时，它应该显示一条感谢信息。但是，现在它会发生崩溃并显示错误消息“渲染的 hooks 比预期的少”。你能发现错误并修复它吗？</div>
