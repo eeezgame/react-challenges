@@ -4,11 +4,20 @@ import Gallery from './challenges/Gallery/Gallery'
 import Form from './challenges/Form/Form'
 import FeedbackForm from './challenges/FeedbackForm/FeedbackForm'
 import FeedbackFormV2 from './challenges/FeedbackFormV2/FeedbackFormV2'
+import TrafficLight from './challenges/TrafficLight/TrafficLight'
 
 function App() {
 
   return (
     <>
+
+      <h2>实现红绿灯组件</h2>
+      <div>以下是一个人行道红绿灯组件，在按下按钮时会切换状态：</div>
+      <TrafficLight></TrafficLight>
+      <div>
+        向 click 事件处理函数添加一个 alert 。当灯为绿色且显示“Walk”时，单击按钮应显示“Stop is next”。当灯为红色并显示“Stop”时，单击按钮应显示“Walk is next”。
+        把 alert 方法放在 setWalk 方法之前或之后有区别吗？
+      </div>
 
       <h2>FeedbackFormV2 移除不必要的 state </h2>
       <div>
