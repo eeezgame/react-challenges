@@ -4,7 +4,12 @@ export default function TrafficLight() {
   const [walk, setWalk] = useState(true);
 
   function handleClick() {
-    setWalk(!walk);
+      setWalk(!walk);
+      if(walk) {
+          alert('Stop is next')
+      } else {
+          alert("Walk is next")
+      }
   }
 
   return (
