@@ -17,9 +17,9 @@ export default function ProcessQueueTestCase() {
             <TestCase
                 baseState={0}
                 queue={[
-                    increment.toString(),
-                    increment.toString(),
-                    increment.toString()
+                    increment,
+                    increment,
+                    increment
                 ]}
                 expected={3}
             />
@@ -28,7 +28,7 @@ export default function ProcessQueueTestCase() {
                 baseState={0}
                 queue={[
                     5,
-                    increment.toString(),
+                    increment,
                 ]}
                 expected={6}
             />
@@ -37,7 +37,7 @@ export default function ProcessQueueTestCase() {
                 baseState={0}
                 queue={[
                     5,
-                    increment.toString(),
+                    increment,
                     42,
                 ]}
                 expected={42}
@@ -52,7 +52,7 @@ function TestCase({
     expected
 }: {
     baseState: number
-    queue: (number | string)[],
+    queue: (Function | number)[],
     expected: number
 }) {
     const actual = getFinalState(baseState, queue);
