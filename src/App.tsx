@@ -7,11 +7,23 @@ import FeedbackFormV2 from './challenges/FeedbackFormV2/FeedbackFormV2'
 import TrafficLight from './challenges/TrafficLight/TrafficLight'
 import RequestTracker from './challenges/RequestTracker/RequestTracker'
 import ProcessQueueTestCase from './challenges/ProcessQueueTestCase/ProcessQueueTestCase'
+import Scoreboard from './challenges/Scoreboard/Scoreboard'
 
 function App() {
 
   return (
     <>
+
+      <h2>修复错误的 state 更新代码</h2>
+
+      <div>
+        这个表单有几个 bug。试着点击几次增加分数的按钮。你会注意到分数并没有增加。然后试着编辑一下名字字段，你会注意到分数突然“响应”了你之前的修改。最后，试着编辑一下姓氏字段，你会发现分数完全消失了。
+
+        你的任务就是修复所有的这些 bug。在你修复它们的同时，解释一下它们为什么会产生。
+      </div>
+
+      <Scoreboard></Scoreboard>
+
 
       <h2>自己实现状态队列</h2>
       <div>
