@@ -8,11 +8,25 @@ import TrafficLight from './challenges/TrafficLight/TrafficLight'
 import RequestTracker from './challenges/RequestTracker/RequestTracker'
 import ProcessQueueTestCase from './challenges/ProcessQueueTestCase/ProcessQueueTestCase'
 import Scoreboard from './challenges/Scoreboard/Scoreboard'
+import Canvas from './challenges/Canvas/Canvas'
 
 function App() {
 
   return (
     <>
+      <h2>发现并修复 mutation</h2>
+
+      <div>
+        {`在静止的背景上有一个可以拖动的方形。你可以使用下拉框来修改方形的颜色。
+
+        但是这里有个 bug。当你先移动了方形，再去修改它的颜色时，背景会突然“跳”到方形所在的位置（实际上背景的位置并不应该发生变化！）。但是这并不是我们想要的，Background 的 position 属性被设置为 initialPosition，也就是 { x: 0, y: 0 }。为什么修改颜色之后，背景会移动呢？
+
+        找到 bug 并修复它。`}
+      </div>
+
+      <div style={{ width: '100%', height: '500px' }}>
+        <Canvas></Canvas>
+      </div>
 
       <h2>修复错误的 state 更新代码</h2>
 
