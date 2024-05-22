@@ -18,6 +18,7 @@ function App() {
 
       <h2>更新购物车中的商品</h2>
       <div>填写 handleIncreaseClick 的逻辑，以便按下“+”时递增对应数字：</div>
+      <div>现在购物车有了一个正常工作的“+”按钮，但是“-”按钮却没有任何作用。你需要为它添加一个事件处理程序，以便按下它时可以减少对应商品的 count。如果在数字为 1 时按下按钮，商品需要自动从购物车中移除。确保商品计数永远不出现 0。</div>
       <ShoppingCart></ShoppingCart>
       
       <h2>发现并修复 mutation</h2>
