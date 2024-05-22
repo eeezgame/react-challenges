@@ -9,11 +9,17 @@ import RequestTracker from './challenges/RequestTracker/RequestTracker'
 import ProcessQueueTestCase from './challenges/ProcessQueueTestCase/ProcessQueueTestCase'
 import Scoreboard from './challenges/Scoreboard/Scoreboard'
 import Canvas from './challenges/Canvas/Canvas'
+import ShoppingCart from './challenges/ShoppingCart/ShoppingCart'
 
 function App() {
 
   return (
     <>
+
+      <h2>更新购物车中的商品</h2>
+      <div>填写 handleIncreaseClick 的逻辑，以便按下“+”时递增对应数字：</div>
+      <ShoppingCart></ShoppingCart>
+      
       <h2>发现并修复 mutation</h2>
 
       <div>
