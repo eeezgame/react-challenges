@@ -10,11 +10,16 @@ import ProcessQueueTestCase from './challenges/ProcessQueueTestCase/ProcessQueue
 import Scoreboard from './challenges/Scoreboard/Scoreboard'
 import Canvas from './challenges/Canvas/Canvas'
 import ShoppingCart from './challenges/ShoppingCart/ShoppingCart'
+import TaskApp from './challenges/TaskApp/TaskApp'
 
 function App() {
 
   return (
     <>
+
+      <h2>使用不会直接修改原始值的方法修复 mutation 的问题 </h2>
+      <div>在下面的例子中，App.js 中所有的事件处理程序都会产生 mutation。这导致编辑和删除待办事项的功能无法正常运行。使用不会直接修改原始值的方法重写 handleAddTodo、handleChangeTodo 和 handleDeleteTodo 这三个函数：</div>
+      <TaskApp></TaskApp>
 
       <h2>更新购物车中的商品</h2>
       <div>填写 handleIncreaseClick 的逻辑，以便按下“+”时递增对应数字：</div>
