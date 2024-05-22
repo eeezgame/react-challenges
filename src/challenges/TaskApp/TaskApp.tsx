@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AddTodo from './AddTodo.js';
 import TaskList from './TaskList.js';
+import { useImmer } from 'use-immer';
 
 interface Todo {
   id: number,
@@ -16,34 +17,38 @@ const initialTodos: Todo[] = [
 ];
 
 export default function TaskApp() {
-  const [todos, setTodos] = useState(
+  const [todos, updateTodos] = useImmer(
     initialTodos
   );
 
   function handleAddTodo(title: string) {
-    setTodos([...todos, {
-      id: nextId++,
-      title: title,
-      done: false
-    }])
+    updateTodos(draft=> {
+      draft.push({
+        id: nextId++,
+        title: title,
+        done: false
+      })
+    })
   }
 
   function handleChangeTodo(nextTodo: Todo) {
-    setTodos(todos.map(t=> {
-      if(t.id === nextTodo.id){
-        return {
-          id: nextTodo.id,
-          title: nextTodo.title,
-          done:nextTodo.done
-        }
-      } else {
-        return t
+    updateTodos(draft=>{
+      const todo = draft.find(t=> t.id === nextTodo.id)
+      if(todo){
+        todo.title = nextTodo.title
+        todo.done = nextTodo.done
       }
-    }))
+    })
   }
 
   function handleDeleteTodo(todoId: number) {
-    setTodos(todos.filter(t=> t.id !== todoId))
+    updateTodos(draft=>{
+      const index = draft.findIndex(t=> t.id === todoId)
+      const include = index !== -1;
+      if(include){
+        draft.splice(index, 1)
+      }
+    })
   }
 
   return (
