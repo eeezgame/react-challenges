@@ -21,28 +21,29 @@ export default function TaskApp() {
   );
 
   function handleAddTodo(title: string) {
-    todos.push({
+    setTodos([...todos, {
       id: nextId++,
       title: title,
       done: false
-    });
+    }])
   }
 
   function handleChangeTodo(nextTodo: Todo) {
-    const todo = todos.find(t =>
-      t.id === nextTodo.id
-    );
-    if(todo){
-      todo.title = nextTodo.title;
-      todo.done = nextTodo.done;
-    }
+    setTodos(todos.map(t=> {
+      if(t.id === nextTodo.id){
+        return {
+          id: nextTodo.id,
+          title: nextTodo.title,
+          done:nextTodo.done
+        }
+      } else {
+        return t
+      }
+    }))
   }
 
   function handleDeleteTodo(todoId: number) {
-    const index = todos.findIndex(t =>
-      t.id === todoId
-    );
-    todos.splice(index, 1);
+    setTodos(todos.filter(t=> t.id !== todoId))
   }
 
   return (
