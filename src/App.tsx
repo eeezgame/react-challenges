@@ -11,11 +11,20 @@ import Scoreboard from './challenges/Scoreboard/Scoreboard'
 import Canvas from './challenges/Canvas/Canvas'
 import ShoppingCart from './challenges/ShoppingCart/ShoppingCart'
 import TaskApp from './challenges/TaskApp/TaskApp'
-
+import Picture from './challenges/Picture/Picture'
 function App() {
 
   return (
     <>
+      <h2> 添加和删除一个 CSS class  </h2>
+      <div>
+        {`
+尝试实现当点击图片时删除外部 <div> 的 CSS class background--active，并将 picture--active 的 CSS class 添加到 <img> 上。当再次点击背景图片时将恢复最开始的 CSS class。
+
+视觉上，你应该期望当点击图片时会移除紫色的背景，并且高亮图片的边框。点击图片外面时高亮背景并且删除图片边框的高亮效果。`}
+      </div>
+
+      <Picture></Picture>
 
       <h2>使用不会直接修改原始值的方法修复 mutation 的问题 </h2>
       <div>在下面的例子中，App.js 中所有的事件处理程序都会产生 mutation。这导致编辑和删除待办事项的功能无法正常运行。使用不会直接修改原始值的方法重写 handleAddTodo、handleChangeTodo 和 handleDeleteTodo 这三个函数：</div>
