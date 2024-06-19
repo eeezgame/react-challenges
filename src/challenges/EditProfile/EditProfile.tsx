@@ -42,7 +42,7 @@ export default function EditProfile() {
                     editing ? 'Save Profile' : 'Edit Profile'
                 }
             </button>
-            <p><i>Hello, Jane Jacobs!</i></p>
+            <p><i>Hello, {firstName} {lastName}!</i></p>
         </form>
     );
 }
