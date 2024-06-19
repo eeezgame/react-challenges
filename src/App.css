@@ -1,3 +1,8 @@
+
+.edit-profile-form { box-sizing: border-box; }
+.edit-profile-form { font-family: sans-serif; margin: 20px; padding: 0; }
+.edit-profile-form label { display: block; margin-bottom: 20px; }
+
 .background {
     display: flex;
     justify-content: center;

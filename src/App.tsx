@@ -12,10 +12,17 @@ import Canvas from './challenges/Canvas/Canvas'
 import ShoppingCart from './challenges/ShoppingCart/ShoppingCart'
 import TaskApp from './challenges/TaskApp/TaskApp'
 import Picture from './challenges/Picture/Picture'
+import EditProfile from './challenges/EditProfile/EditProfile'
 function App() {
 
   return (
     <>
+      <h2>个人信息编辑器</h2>
+      <div>
+        EditProfile
+      </div>
+      <EditProfile></EditProfile>
+
       <h2> 添加和删除一个 CSS class  </h2>
       <div>
         {`
