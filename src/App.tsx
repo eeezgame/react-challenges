@@ -13,11 +13,34 @@ import ShoppingCart from './challenges/ShoppingCart/ShoppingCart'
 import TaskApp from './challenges/TaskApp/TaskApp'
 import Picture from './challenges/Picture/Picture'
 import EditProfile from './challenges/EditProfile/EditProfile'
-function App() {
+import Clock from './challenges/Clock/Clock'
+import { useState } from 'react'
 
+function App() {
+  const [clockColor, setClockColor] = useState('lightcoral')
+  const handlePickColorChange = (e: React.ChangeEvent<HTMLSelectElement>)=> {
+    setClockColor(e.target.value)
+  }
   return (
     <>
+
+      <h2> 修复一个未更新的组件
+      </h2>
+      <div>
+        这个 Clock 组件接收两个属性：color 和 time。当您在选择框中选择不同的颜色时，Clock 组件将从其父组件接收到一个不同的 color 属性。然而，由于某种原因，显示的颜色没有更新。为什么？请修复这个问题。
+      </div>
+
+      <p>Pick a color: 
+        <select onChange={handlePickColorChange}>
+          <option value="lightcoral">lightcoral</option>
+          <option value="midnightblue">midnightblue</option>
+          <option value="rebeccapurple">rebeccapurple</option>
+        </select>
+      </p>
+      <Clock color={clockColor} time='2024'></Clock>
+
       <h2>个人信息编辑器</h2>
+      <div></div>
       <div>
         EditProfile
       </div>
@@ -41,7 +64,7 @@ function App() {
       <div>填写 handleIncreaseClick 的逻辑，以便按下“+”时递增对应数字：</div>
       <div>现在购物车有了一个正常工作的“+”按钮，但是“-”按钮却没有任何作用。你需要为它添加一个事件处理程序，以便按下它时可以减少对应商品的 count。如果在数字为 1 时按下按钮，商品需要自动从购物车中移除。确保商品计数永远不出现 0。</div>
       <ShoppingCart></ShoppingCart>
-      
+
       <h2>发现并修复 mutation</h2>
 
       <div>
